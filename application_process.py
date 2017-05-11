@@ -36,7 +36,7 @@ def mentor_names(cursor):
 
 
 def mentor_nick_names(cursor):
-    sql_query = """SELECT nick_name FROM mentors;"""
+    sql_query = """SELECT nick_name FROM mentors WHERE city='Miskolc';"""
     result = show_sql_result_in_table(cursor, sql_query, ["nick_name"])
     return result
 
@@ -86,7 +86,7 @@ def delete_arsenio(cursor):
 
 def main():
     try:
-        connect_str = "dbname='eros' user='eros' host='localhost' password='nemigazi'"
+        connect_str = "dbname='eros' user='eros' host='localhost' password='titok'"
         conn = psycopg2.connect(connect_str)
         conn.autocommit = True
         cursor = conn.cursor()
@@ -97,7 +97,7 @@ def main():
     os.system('clear')
     while(True):
         print("\n1. Print mentors' name"
-              "\n2. Print mentors' nickname"
+              "\n2. Print mentors' nickname who work in Miskolc"
               "\n3. Print Carol's full name and her phone number"
               "\n4. Print the name and phone number of the applicant who has an email of @adipiscingenimmi.edu"
               "\n5. Add Markus Schaffarzyk to the applicants table"
