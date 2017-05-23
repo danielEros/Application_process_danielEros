@@ -41,7 +41,8 @@ def list_applicants():
 
 @app.route('/applicants-and-mentors')
 def applicants_and_mentors():
-    pass
+    render_data = data_manager.applicants_and_mentors_fill()
+    return render_template('sql_form.html', **render_data)
 
 if __name__ == '__main__':
     app.run(debug=True)
