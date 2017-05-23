@@ -86,7 +86,7 @@ def applicants_and_mentors_fill():
                                   'the applicants plus the name of the assigned mentor (joining through the '
                                   'applicants_mentors table) ordered by the applicants id column. All the '
                                   'applicants are shown, even if they have no assigned mentor in the database. In this '
-                                  'case use the string \'None\' is used instead of the mentor name.')
+                                  'case the string \'None\' is used instead of the mentor name.')
     result_dict['column_list'] = ['applicants.first_name', 'applicants.application_code', 'mentors.first_name',
                                   'mentors.last_name']
     result_dict['sql_query'] = """SELECT a.first_name, a.application_code, m.first_name, m.last_name
