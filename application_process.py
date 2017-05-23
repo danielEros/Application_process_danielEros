@@ -13,18 +13,19 @@ def index_page():
 
 @app.route('/mentors')
 def mentors():
-    render_data = data_manager.mentors_fill_form()
+    render_data = data_manager.mentors_fill()
     return render_template('sql_form.html', **render_data)
 
 @app.route('/all-school')
 def all_school():
-    render_data = data_manager.all_school()
+    render_data = data_manager.all_school_fill()
     return render_template('sql_form.html', **render_data)
 
 
 @app.route('/mentors-by-country')
 def mentors_by_country():
-    pass
+    render_data = data_manager.mentors_by_country_fill()
+    return render_template('sql_form.html', **render_data)
 
 
 @app.route('/contacts')
