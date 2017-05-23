@@ -59,3 +59,21 @@ def contacts_fill():
                                   ORDER BY schools.name;"""
     result_dict['sql_result'] = connect_psql.handle_database(result_dict['sql_query'])
     return result_dict
+
+
+def applicants_fill():
+    result_dict = {}
+    result_dict['title'] = 'Applicants page'
+    result_dict['description'] = ('This page shows the result of a query that returns the first name and the code of '
+                                  'the applicants plus the creation_date of the application (joining with the '
+                                  'applicants_mentors table) ordered by the creation_date in descending order, only '
+                                  'for applications later than 2016-01-01')
+    result_dict['column_list'] = ['applicants.first_name', 'applicants.application_code',
+                                  'applicants_mentors.creation_date']
+    result_dict['sql_query'] = """SELECT a.first_name, a.application_code, am.creation_date
+                                  FROM applicants a
+                                  INNER JOIN applicants_mentors am ON a.id=am.applicant_id
+                                  WHERE am.creation_date > '2016-01-01'
+                                  ORDER BY am.creation_date DESC;"""
+    result_dict['sql_result'] = connect_psql.handle_database(result_dict['sql_query'])
+    return result_dict

@@ -35,7 +35,8 @@ def school_mentor_contacts():
 
 @app.route('/applicants')
 def list_applicants():
-    pass
+    render_data = data_manager.applicants_fill()
+    return render_template('sql_form.html', **render_data)
 
 
 @app.route('/applicants-and-mentors')
