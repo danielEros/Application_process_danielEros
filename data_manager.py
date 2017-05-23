@@ -44,3 +44,18 @@ def mentors_by_country_fill():
                                   ORDER BY schools.country;"""
     result_dict['sql_result'] = connect_psql.handle_database(result_dict['sql_query'])
     return result_dict
+
+
+def contacts_fill():
+    result_dict = {}
+    result_dict['title'] = 'Contacts page'
+    result_dict['description'] = ('This page shows the result of a query that returns the name of the school plus the '
+                                  'name of contact person at the school (from the mentors table) ordered by the name '
+                                  'of the school')
+    result_dict['column_list'] = ['schools.name', 'mentors.first_name', 'mentors.last_name']
+    result_dict['sql_query'] = """SELECT schools.name, mentors.first_name, mentors.last_name
+                                  FROM schools
+                                  INNER JOIN mentors ON schools.contact_person=mentors.id
+                                  ORDER BY schools.name;"""
+    result_dict['sql_result'] = connect_psql.handle_database(result_dict['sql_query'])
+    return result_dict
