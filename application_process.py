@@ -18,7 +18,8 @@ def mentors():
 
 @app.route('/all-school')
 def all_school():
-    pass
+    render_data = data_manager.all_school()
+    return render_template('sql_form.html', **render_data)
 
 
 @app.route('/mentors-by-country')
