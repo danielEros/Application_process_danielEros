@@ -1,7 +1,5 @@
 from flask import Flask, render_template, request
 import data_manager
-# import ui
-# import os
 
 app = Flask(__name__)
 
@@ -15,6 +13,7 @@ def index_page():
 def mentors():
     render_data = data_manager.mentors_fill()
     return render_template('sql_form.html', **render_data)
+
 
 @app.route('/all-school')
 def all_school():
@@ -30,7 +29,8 @@ def mentors_by_country():
 
 @app.route('/contacts')
 def school_mentor_contacts():
-    pass
+    render_data = data_manager.contacts_fill()
+    return render_template('sql_form.html', **render_data)
 
 
 @app.route('/applicants')
