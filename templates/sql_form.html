@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>{{ title }}</title>
+    </head>
+    <body>
+        <h2>{{ title }}</h2>
+        <p>{{ description }}</p>
+        <h3>The applied SQL query: {{ sql_query }}</h3>
+        <br>
+        <table border="1">
+            <tr>
+                {% for column in column_list %}
+                        <th>{{ column }}</th>
+                {% endfor %}
+            </tr>
+            {% for row in sql_result %}
+                <tr>  
+                    {% for data in row%}
+                        <td>{{ data }}</td>
+                    {% endfor %}
+                </tr>
+            {% endfor %}
+        </table>
+        <br>
+        <a href="/">Back to the index page</a>
+    </body>
+</html>
