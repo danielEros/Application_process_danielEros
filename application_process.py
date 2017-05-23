@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template
 import data_manager
 
 app = Flask(__name__)
@@ -45,4 +45,4 @@ def applicants_and_mentors():
     return render_template('sql_form.html', **render_data)
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run()
