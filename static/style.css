@@ -1,0 +1,75 @@
+html {
+    background-color : #9ced90;
+    background: url(background.jpg) fixed no-repeat 100%;
+}
+
+body {
+    font-family: 'Jura', sans-serif;
+    width : 980px;
+    margin-left : auto;
+    margin-right : auto;
+    font-size : 1.2em;
+    color : #404040;
+    background-color : white;
+    padding : 10px 30px;
+    border-radius: 1%;
+}
+
+#SQL-query {
+    font-family: Courier, sans-serif;
+}
+
+li{
+  margin: 10px 0;
+}
+
+h2 {
+    color : #7fe234;
+}
+
+h3, a:visited {
+    color: #f2b21d;
+}
+
+p {
+    text-align: justify;
+}
+
+#data_structure {
+    margin-left: 175px;
+}
+
+a {
+    text-decoration: none;
+    color: #af2b5c;
+    font-weight: bold;
+}
+
+
+th {
+    padding: 7px;
+    text-align: center;
+    border:#3ee059 2px solid;
+}
+
+table {
+    margin: auto;
+    border-collapse:collapse; 
+}
+table td { 
+    padding:7px;
+    border:#3ee059 2px solid;
+    text-align: center;
+}
+
+table tr {
+    background: #9ef7ad;
+}
+
+table tr:nth-child(odd) { 
+    background: #9ef7ad;
+}
+
+table tr:nth-child(even) {
+    background: #c0edc7;
+}

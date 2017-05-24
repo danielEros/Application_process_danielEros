@@ -21,7 +21,7 @@ def all_school_fill():
     result_dict['title'] = 'All school page'
     result_dict['description'] = ('This page shows the result of a query that returns the name of the mentors plus the '
                                   'name and country of the school (joining with the schools table) ordered by the '
-                                  'mentors id column, including all the schools, even if there\' no mentor yet.')
+                                  'mentors id column, including all the schools, even if there is no mentor yet.')
     result_dict['column_list'] = ['mentors.first_name', 'mentors.last_name', 'schools.name', 'schools.country']
     result_dict['sql_query'] = """SELECT m.first_name, m.last_name, s.name, s.country
                                   FROM mentors m

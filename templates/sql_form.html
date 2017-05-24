@@ -3,11 +3,13 @@
 <html>
     <head>
         <title>{{ title }}</title>
+        <link rel="stylesheet" type="text/css" href="/static/style.css">
+        <link href="https://fonts.googleapis.com/css?family=Jura" rel="stylesheet">
     </head>
     <body>
         <h2>{{ title }}</h2>
         <p>{{ description }}</p>
-        <h3>The applied SQL query: {{ sql_query }}</h3>
+        <h3>The applied SQL query: <br><br><span id="SQL-query">{{ sql_query }}</span></h3>
         <br>
         <table border="1">
             <tr>
@@ -27,6 +29,6 @@
         <a href="/">Back to the index page</a>
         <br>
         <p>The database which the SQL query was applied on looks like this:</p>
-         <img src="/static/application_process_assignment_part_2.png" alt="Database structure">
+        <img src="/static/application_process_assignment_part_2.png" alt="Database structure" id="data_structure">
     </body>
 </html>

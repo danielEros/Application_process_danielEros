@@ -45,4 +45,4 @@ def applicants_and_mentors():
     return render_template('sql_form.html', **render_data)
 
 if __name__ == '__main__':
-    app.run()
+    app.run(debug=True)
